@@ -42,4 +42,34 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+//Search Bar and AJAX to openLibrary
+const $input = $("input[name='search']");
+const $userForm = $("#user-search");
+const $submitButton = $("#submit");
+
+$userForm.submit((event)=> {
+  event.preventDefault();
+  const userInput = $input.val();
+  console.log(userInput);
+  const URL = `http://openlibrary.org/search.json?q=${userInput}`;
+  $.get(URL, (data) => {
+    console.log(data)
+
+    for (let i = 0; i < data.docs.length; i++){
+      const result = data.docs[i]
+      const Title = result.title ? result.title : 'untitled'
+      const Author = result.author_name ? result.author_name[0] : 'unkown author'
+      const pageCount = result.number_of_pages_median ? result.number_of_pages_median : '0'
+      const Published = result.publish_date ? result.publish_date[0] : 'no date entered'
+
+      const disres = `${Title}: by ${Author} <br>${pageCount} pages, published: ${Published} `
+      const $displayedResult = $('<li></li>');
+      $displayedResult.html(disres)
+
+      const $display = $('#display');
+      $display.append($displayedResult);
+    }
+
+  })
+})
 
