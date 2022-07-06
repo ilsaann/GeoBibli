@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //adding marker for demonstration
-//const marker = L.marker([40.92, -74.16]).addTo(map);
+
 
 var GOAC = document.querySelector('#GOAC');
 
@@ -16,7 +16,7 @@ GOAC.addEventListener('click', ()=> {
     const marker = L.marker([40.92, -74.16]).addTo(map);
     marker.bindPopup("<b>The Girls Of Atomic City</b><br>page 5: Celia Szapka gets picked up for her 'secret' assignment.").openPopup();
 })
-//marker.bindPopup("<b>The Girls Of Atomic City</b><br>page 5: Celia Szapka gets picked up for her 'secret' assignment.").openPopup();
+
 
 //making some information collapsible
 var coll = document.getElementsByClassName("collapsible");
