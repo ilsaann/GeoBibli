@@ -1,0 +1,89 @@
+
+body {
+    background-color:darkslategray;
+    
+}
+
+#hostMap {
+    display:flex;
+    
+}
+
+
+#map {
+    margin:auto;
+    height: 600px;
+    width: 600px;
+    
+}
+
+h1 {
+    font-family: 'Jazz LET, fantasy'; 
+    font-size: 4.5em;
+    color: #a9dfd4;
+    display: flex;
+    justify-content: center;
+    font-style: oblique;
+    mix-blend-mode:luminosity; 
+    text-shadow: 0px 0px 12px #a9dfd4;
+}
+
+
+
+p {
+    display: flex;
+    justify-content: center;
+    font-family: 'URW Chancery L, cursive';
+    color: #a9dfd4;   
+}
+
+#concept {
+    color: #a9dfd4;
+    backface-visibility: unset;
+    text-shadow: 0px 0px 12px #a9dfd4;
+
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-family: 'Jazz LET, fantasy'; 
+    display: flex;
+    justify-content: center;
+    font-style: oblique;
+    mix-blend-mode:luminosity; 
+    text-shadow: 0px 0px 12px #a9dfd4;
+  }
+  
+
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    
+  }
+  .library {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background-color: #a9dfd4;
+
+  }
+
+  .book {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background-color:#a9dfd4;
+    
+  }
