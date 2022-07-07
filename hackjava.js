@@ -84,8 +84,8 @@ $userForm.submit((event)=> {
 
 //if Title and Author match make strong or something
       for (let j = 0; i < storedBooks.length; i++) {
-        let mappedTitle = storedBooks[i].Title
-        let mappedAuthor = storedBooks[i].Author
+        const mappedTitle = storedBooks[i].Title
+        const mappedAuthor = storedBooks[i].Author
         if ( mappedTitle.toUpperCase == Title.toUpperCase && mappedAuthor.toUpperCase == Author.toUpperCase){
           $displayedResult.css("text-decoration","underline")
           console.log('match found')
