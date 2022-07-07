@@ -1,5 +1,5 @@
 
-//making some map at certain lat and long and zoom
+//making some map at certain lat and long and zoom ////////////////////////////////////////////////////////////////////////////////////////////////////////
 var map = L.map('map').setView([40.9, -74.1], 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,7 +8,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
- const GOAC = document.querySelector('#GOAC');
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//fixing some book points for the concept demo////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const GOAC = document.querySelector('#GOAC');
 
 GOAC.addEventListener('click', ()=> {
     let marker1 = L.marker([40.92, -74.16]).addTo(map);
@@ -20,13 +23,20 @@ GOAC.addEventListener('click', ()=> {
 })
 
 const Verity = document.querySelector('#Verity')
+//var isVerity;
 Verity.addEventListener('click', () => {
+   //isVerity ? isVerity = false : isVerity = true
+   
     let marker1 =  L.marker([40.712, -74.006]).addTo(map);
     marker1.bindPopup("<b>Verity</b><br> Lowen Ashleigh meets Jeremy Crawford in New York City.").togglePopup();
+   
 })
 
 
-//making some information collapsible
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//making some information collapsible///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -42,7 +52,11 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-//Search Bar and AJAX to openLibrary
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Search Bar and AJAX to openLibrary///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const $input = $("input[name='search']");
 const $userForm = $("#user-search");
 const $submitButton = $("#submit");
@@ -54,22 +68,34 @@ $userForm.submit((event)=> {
   const URL = `http://openlibrary.org/search.json?q=${userInput}`;
   $.get(URL, (data) => {
     console.log(data)
-
+    const $display = $('#display');
+    $display.html(" ")
     for (let i = 0; i < data.docs.length; i++){
       const result = data.docs[i]
       const Title = result.title ? result.title : 'untitled'
       const Author = result.author_name ? result.author_name[0] : 'unkown author'
       const pageCount = result.number_of_pages_median ? result.number_of_pages_median : '0'
       const Published = result.publish_date ? result.publish_date[0] : 'no date entered'
-
+      
+      
       const disres = `${Title}: by ${Author} <br>${pageCount} pages, published: ${Published} `
       const $displayedResult = $('<li></li>');
       $displayedResult.html(disres)
 
-      const $display = $('#display');
+//if Title and Author match make strong or something
+      for (let j = 0; i < storedBooks.length; i++) {
+        let mappedTitle = storedBooks[i].Title
+        let mappedAuthor = storedBooks[i].Author
+        if ( mappedTitle.toUpperCase == Title.toUpperCase && mappedAuthor.toUpperCase == Author.toUpperCase){
+          $displayedResult.css("text-decoration","underline")
+          console.log('match found')
+        }
+      }
+      
+      
       $display.append($displayedResult);
     }
 
   })
 })
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

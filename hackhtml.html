@@ -19,6 +19,7 @@
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="BookData.js"></script>
     <script defer src="hackjava.js"></script>
 
    
@@ -26,7 +27,7 @@
 <body>
     <h1> <img src="leftBookEnd.png"  style="float:left;width:90px;height:70px"> GeoBibli <img src="rightBookEnd.png" style="float:right;width:90px;height:70px"> </h1>
     <div id="concept">
-        <p>Where geocaching and reading converge for book lovers' to see the world as expressed in literature.</p>
+        <p class="pitch">Where geocaching and reading converge for book lovers' to see the world as expressed in literature.</p>
     </div>
     <div id="explain">
         <button type="button" class="collapsible">How would it work?</button>
@@ -41,11 +42,12 @@
 
         <!-- holds the book shelf and search bar-->
         <div class="shelf">
-        <button class="library">BookShelf</button>
-        <button class="book" id="GOAC">The Girls of Atomic City</button>
-        <button class="book" id="Verity">Verity</button>
-        <button class="book" id="WTCDS">Where The Crawdads Sing</button>
-        <button class="book">Book</button>
+        <button class="library" title="BookShelf"></button>
+        <button class="book" id="GOAC" title="The Girls of Atomic City"></button>
+        <button class="book" id="Verity" title="Verity"></button>
+        <button class="book" id="WTCDS" title="Where the Crawdads Sing"></button>
+        <button class="book" id="blank"></button>
+        <button class="book" id="blank2"></button>
         <form id="user-search">
             <input type="text" name='search'>
             <button id="submit">Search</button>
