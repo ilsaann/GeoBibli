@@ -96,7 +96,7 @@ $userForm.submit((event)=> {
       const $displayedResult = $('<li></li>');
       $displayedResult.html(disres)
 
-//if Title and Author match make strong or something
+//if Title and Author match BookData, underline result
       for (let j = 0; j < storedBooks.length; j++) {
         const mappedTitle = storedBooks[j].Title
         const mappedAuthor = storedBooks[j].Author
