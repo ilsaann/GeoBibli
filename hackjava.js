@@ -79,7 +79,7 @@ $userForm.submit((event)=> {
   event.preventDefault();
   const userInput = $input.val();
   console.log(userInput);
-  const URL = `http://openlibrary.org/search.json?q=${userInput}`;
+  const URL = `https://openlibrary.org/search.json?q=${userInput}`;
   $.get(URL, (data) => {
     console.log(data)
     const $display = $('#display');
