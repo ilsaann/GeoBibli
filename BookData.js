@@ -19,7 +19,7 @@ var storedBooks = [
                   'markerCoordinate': [40.712, -74.006]
                 },
                 { 'message': "The Crawford Mansion, somewhere in Vermont",
-                  'markerCoordinate': [44.54, 71.64]
+                  'markerCoordinate': [44.54, -71.64]
                 }
             ]
     },

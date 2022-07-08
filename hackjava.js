@@ -32,6 +32,20 @@ Verity.addEventListener('click', () => {
    
 })
 
+//template for more dynamically grabbing data from BookData/////////////////////////////////////////////////////////////////////////////////////////
+const WTCDS = document.querySelector('#WTCDS')
+const wtcdsInfo= storedBooks[2]
+const wtcdsPoints= wtcdsInfo.Points
+WTCDS.addEventListener('click',() =>{
+  for (i=0; i < wtcdsPoints.length; i++){
+    let coordinate= wtcdsPoints[i].markerCoordinate
+    let message= wtcdsPoints[i].message
+    L.marker(coordinate).addTo(map).bindPopup(message).openPopup();
+
+  }
+  
+})
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,10 +97,13 @@ $userForm.submit((event)=> {
       $displayedResult.html(disres)
 
 //if Title and Author match make strong or something
-      for (let j = 0; i < storedBooks.length; i++) {
-        const mappedTitle = storedBooks[i].Title
-        const mappedAuthor = storedBooks[i].Author
-        if ( mappedTitle.toUpperCase == Title.toUpperCase && mappedAuthor.toUpperCase == Author.toUpperCase){
+      for (let j = 0; j < storedBooks.length; j++) {
+        const mappedTitle = storedBooks[j].Title
+        const mappedAuthor = storedBooks[j].Author
+
+        console.log(Title, mappedTitle)
+      
+        if ( (mappedTitle === Title) && (mappedAuthor === Author)){
           $displayedResult.css("text-decoration","underline")
           console.log('match found')
         }
