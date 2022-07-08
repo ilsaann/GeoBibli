@@ -79,7 +79,7 @@ p {
     justify-content: center;
     height: 50px;
     width: 150px;
-    background-image: url('bookshelf.jpg');
+    background-image: url('book icons/bookshelf.jpg');
     background-size:contain;
 
   }
@@ -101,29 +101,29 @@ p {
   }
 
   #GOAC {
-    background-image: url('brownbook.jpg');
+    background-image: url('book icons/brownbook.jpg');
     background-size:cover;
   
   }
   
 
   #Verity {
-    background-image: url('lightgreenbook.jpg');
+    background-image: url('book icons/lightgreenbook.jpg');
     background-size:cover;
   }
 
   #WTCDS {
-    background-image: url('yellowbook.jpg');
+    background-image: url('book icons/yellowbook.jpg');
     background-size:cover;
   }
 
   #blank {
-    background-image: url('wideblack.jpg');
+    background-image: url('book icons/wideblack.jpg');
     background-size:cover;
   }
 
   #blank2 {
-    background-image: url('darkgreenbook.jpg');
+    background-image: url('book icons/darkgreenbook.jpg');
     background-size:cover;
   }
 
